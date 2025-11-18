@@ -1,0 +1,8 @@
+# Supabase local development files
+.branches
+.temp
+seed.sql
+
+# Database connection info (contains secrets)
+/.supabase
+

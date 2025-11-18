@@ -1,0 +1,41 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Railway CLI
+        run: npm install -g @railway/cli
+      
+      - name: Login to Railway
+        run: railway login --browserless
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      
+      - name: Link to Railway Project
+        run: railway link ${{ secrets.RAILWAY_PROJECT_ID }}
+      
+      - name: Set Environment Variables
+        run: |
+          railway variables set SUPABASE_DB_URL="postgresql+asyncpg://postgres:Pulsar%40220@db.fizlofuvxbdbbbqhjcgk.supabase.co:5432/postgres?sslmode=require"
+          railway variables set DATABASE_URL="postgresql+asyncpg://postgres:postgres@localhost:5432/orionx"
+          railway variables set REDIS_URL="redis://default:ATtxAAIncDI0NmFiZDJhMTA1ZGQ0ZWRhODBlZmI2ZmQ2Y2JkNTJjMXAyMTUyMTc@electric-walrus-15217.upstash.io:6379"
+          railway variables set UPSTASH_REDIS_URL="redis://localhost:6379/0"
+          railway variables set OPENROUTER_API_KEY="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"
+          railway variables set SECRET_KEY="aGohO5ZMAqH7Uel4Vr1LcyjznQW2siuRCFSIEfKTxtw"
+          railway variables set SUPABASE_SERVICE_ROLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZpemxvZnV2eGJkYmJicWhqY2drIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MzQ0MTYxMSwiZXhwIjoyMDc5MDE3NjExfQ.zE2ZnCP6xARgwc1htOZWiYyEvOtNP1kEo3csF_1s4s0"
+          railway variables set SUPABASE_PROJECT_URL="https://fizlofuvxbdbbbqhjcgk.supabase.co"
+          railway variables set SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZpemxvZnV2eGJkYmJicWhqY2drIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0NDE2MTEsImV4cCI6MjA3OTAxNzYxMX0.1FKznPfZjVn-HQf3nIyuIIXCp0zcKiiNoNuENlcPxFc"
+          railway variables set CORS_ORIGINS="*"
+          railway variables set FRONTEND_DOMAIN="*"
+      
+      - name: Deploy to Railway
+        run: railway up
+

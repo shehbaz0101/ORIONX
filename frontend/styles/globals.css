@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: 248 250 252;
+  --foreground: 15 23 42;
+  --border: 226 232 240;
+}
+
+.dark {
+  --background: 15 23 42;
+  --foreground: 248 250 252;
+  --border: 51 65 85;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Stripe-style gradient beams */
+.gradient-beam {
+  background: linear-gradient(180deg, rgba(99, 91, 255, 0.1) 0%, rgba(122, 92, 255, 0.1) 100%);
+}
+
+/* Card styles */
+.card-stripe {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.card-stripe:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Input styles */
+.input-stripe {
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border));
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.input-stripe:focus {
+  outline: none;
+  border-color: #635BFF;
+  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
+}
+
+/* Button styles */
+.btn-stripe {
+  background: #635BFF;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-stripe:hover {
+  background: #5851E6;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(99, 91, 255, 0.3);
+}
+
+/* Table styles */
+.table-stripe {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-stripe th {
+  text-align: left;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #64748B;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.table-stripe td {
+  padding: 16px 12px;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.table-stripe tr:hover {
+  background-color: rgba(99, 91, 255, 0.02);
+}

@@ -1,0 +1,58 @@
+===========================================
+ORIONX RAILWAY ENVIRONMENT VARIABLES
+Copy-Paste Ready Format
+===========================================
+
+VARIABLE 1:
+Name: SUPABASE_DB_URL
+Value: postgresql+asyncpg://postgres:Pulsar%40220@db.fizlofuvxbdbbbqhjcgk.supabase.co:5432/postgres?sslmode=require
+
+VARIABLE 2:
+Name: DATABASE_URL
+Value: postgresql+asyncpg://postgres:postgres@localhost:5432/orionx
+
+VARIABLE 3:
+Name: REDIS_URL
+Value: redis://default:ATtxAAIncDI0NmFiZDJhMTA1ZGQ0ZWRhODBlZmI2ZmQ2Y2JkNTJjMXAyMTUyMTc@electric-walrus-15217.upstash.io:6379
+
+VARIABLE 4:
+Name: UPSTASH_REDIS_URL
+Value: redis://localhost:6379/0
+
+VARIABLE 5:
+Name: OPENROUTER_API_KEY
+Value: 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
+
+VARIABLE 6:
+Name: SECRET_KEY
+Value: aGohO5ZMAqH7Uel4Vr1LcyjznQW2siuRCFSIEfKTxtw
+
+VARIABLE 7:
+Name: SUPABASE_SERVICE_ROLE_KEY
+Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZpemxvZnV2eGJkYmJicWhqY2drIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MzQ0MTYxMSwiZXhwIjoyMDc5MDE3NjExfQ.zE2ZnCP6xARgwc1htOZWiYyEvOtNP1kEo3csF_1s4s0
+
+VARIABLE 8:
+Name: SUPABASE_PROJECT_URL
+Value: https://fizlofuvxbdbbbqhjcgk.supabase.co
+
+VARIABLE 9:
+Name: SUPABASE_ANON_KEY
+Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZpemxvZnV2eGJkYmJicWhqY2drIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0NDE2MTEsImV4cCI6MjA3OTAxNzYxMX0.1FKznPfZjVn-HQf3nIyuIIXCp0zcKiiNoNuENlcPxFc
+
+VARIABLE 10:
+Name: CORS_ORIGINS
+Value: *
+
+VARIABLE 11:
+Name: FRONTEND_DOMAIN
+Value: *
+
+===========================================
+INSTRUCTIONS:
+1. Go to Railway Dashboard > Your Service > Variables
+2. Click "New Variable"
+3. Copy Name and Value from above
+4. Paste and click Add
+5. Repeat for all 11 variables
+===========================================
+
